@@ -1,7 +1,20 @@
 package Arrays;
 
 public class rainWater {
+    public static void waterContain(int[] altitude) {
+        int totalLength = altitude.length;
+        
+        int rightside[] = new int[totalLength];
+        int leftside[] = new int[totalLength];
+    }
+
+
+
     public static void main(String[] args) {
+        int altitude[] = {3,2,1,5,3,4,6,1,2,4,1};
+        waterContain(altitude);
+
+
         int height[] = {1, 2, 0, 3, 2, 0, 1, 2}; 
 
         int height_size = height.length;
