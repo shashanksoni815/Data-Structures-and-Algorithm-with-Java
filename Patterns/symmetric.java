@@ -85,9 +85,9 @@ public class symmetric {
     }
 
     public static void main(String[] args) {
-        // butterfly(5);
-        // rhombus(8);
-        // hollowRhombus(8);
+        butterfly(5);
+        rhombus(8);
+        hollowRhombus(8);
         diamond(5);
     }
 }
