@@ -54,7 +54,17 @@ public class test {
          System.out.print(arm);
     }
 
-    public static void binarytodecimal(int n) {}
+    public static void binarytodecimal(int n) {
+        int dec = 0;
+        int pow = 0;
+        while(n > 0){
+            int lastDig = n%10;
+            dec += (lastDig * Math.pow(2, pow) );
+            n/=10;
+            pow++;
+        }
+        System.out.print(dec);
+    }
 
     public static void numberToBinary(int n) {
         int bin = 0;
