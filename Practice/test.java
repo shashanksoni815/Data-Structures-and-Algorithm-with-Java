@@ -36,6 +36,24 @@ public class test {
         
     }
 
+    public static void isArmstrong(int n) {
+        int num = n;
+        int arm = 0;
+        int count = 0;
+         while(num > 0){
+            //  int lastdig = num%10;
+             num /=10;
+             count++;
+         }
+         num = n;
+         while(num > 0){
+             int lastdig = num%10;
+             arm += (int)Math.pow(lastdig, count);
+             num /=10;
+         }
+         System.out.print(arm);
+    }
+
 
     public static void main(String arge[]) {
         Scanner sc = new Scanner(System.in);
@@ -44,7 +62,8 @@ public class test {
         // System.out.println("is prime: " + isPrime(n));
 
         //     System.out.println("Hello World");
-        isPalindrome(n);
+        // isPalindrome(n);
+        isArmstrong(n);
         sc.close();
 
     }
