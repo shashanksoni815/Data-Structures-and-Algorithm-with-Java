@@ -54,6 +54,20 @@ public class test {
          System.out.print(arm);
     }
 
+    public static void binarytodecimal(int n) {}
+
+    public static void numberToBinary(int n) {
+        int bin = 0;
+        int pow = 0;
+        
+        while(n > 0){
+            int lastDig = n%2;
+            bin += (lastDig * Math.pow(10, pow) );
+            n/=2;
+            pow++;
+        }
+        System.out.print(bin);
+    }
 
     public static void main(String arge[]) {
         Scanner sc = new Scanner(System.in);
