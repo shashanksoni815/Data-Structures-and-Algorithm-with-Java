@@ -19,13 +19,32 @@ public class test {
         return true;
     }
 
+    public static void isPalindrome(int n) {
+        int num = n;
+        int p = 0;
+        while(n > 0) {
+            int lastDig = n%10;
+            p = p*10 + lastDig;
+            n/=10;
+        }
+        if (num == p){
+            System.out.print("is palindrome");
+        } else {
+            System.out.print("is not palindrome");
+            
+        }
+        
+    }
+
+
     public static void main(String arge[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        isEven(n);
-        System.out.println("is prime: " + isPrime(n));
+        // isEven(n);
+        // System.out.println("is prime: " + isPrime(n));
 
-            System.out.println("Hello World");
+        //     System.out.println("Hello World");
+        isPalindrome(n);
         sc.close();
 
     }
