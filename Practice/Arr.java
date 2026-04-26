@@ -66,12 +66,26 @@ public class Arr {
         System.out.print(max);
     }
 
+    public static void Kadanes(int aee[]){
+        int max = Integer.MIN_VALUE;
+        int curr = 0;
+        for(int i = 0; i < aee.length; i++){
+            curr += aee[i];
+            if(curr > max){
+                max = curr;
+            }
+            if(curr < 0){
+                curr = 0;
+            }
+        }
+        System.out.print(max);
+    }
 
     public static void main(String[] args) {
         int num[] = {1, -2, 6, -1, 3};
         // int key = 17;
         // System.out.println(found(num, key));
         // sum(num, key);
-        sumMaxArr2(num);
+        Kadanes(num);
     }    
 }
