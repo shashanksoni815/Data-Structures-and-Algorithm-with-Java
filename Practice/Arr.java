@@ -81,11 +81,67 @@ public class Arr {
         System.out.print(max);
     }
 
+    public static void trapedWater(int height[]){
+        int idx = height.length;
+        // int max = Integer.MIN_VALUE;
+        // int min = Integer.MAX_VALUE;
+        
+        int rightHeight[] = new int[idx];
+        int leftHeight[] = new int[idx];
+        
+        rightHeight[0] = height[0];
+        for(int i=1; i< idx; i++){
+            if(height[i]> rightHeight[i-1]){
+               rightHeight[i] = height[i];
+            } else {
+            rightHeight[i] = rightHeight[i-1]; 
+            }
+        }
+        printArr(rightHeight);
+        
+        leftHeight[idx-1] = height[idx-1];
+        for(int i=idx-2; i>= 0; i--){
+            if(height[i] > leftHeight[i+1]){
+                leftHeight[i] = height[i];
+            }else {
+                leftHeight[i] = leftHeight[i + 1];
+            }
+        }
+        printArr(leftHeight);
+        // int high = 0;
+        int waterHigh = 0;
+        for(int i = 0; i < idx; i++){
+            // if(rightHeight[i] > leftHeight[i]){
+            //     high = leftHeight[i];
+            // } else {
+            //     high = rightHeight[i];
+            // }
+            // waterHigh += high - height[i]; 
+            int waterLevel = Math.min(leftHeight[i], rightHeight[i]);
+            waterHigh += waterLevel - height[i];
+        }
+        System.out.println(waterHigh);
+        
+        
+        
+    }
+    
+    public static void printArr(int arr[]){
+        for(int i = 0; i< arr.length; i++){
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         int num[] = {1, -2, 6, -1, 3};
         // int key = 17;
         // System.out.println(found(num, key));
         // sum(num, key);
         Kadanes(num);
+        int height[] = {4, 2, 0, 6, 3, 2, 5};
+        // int target = 15;
+        trapedWater(height);
+        printArr(height);
     }    
 }
